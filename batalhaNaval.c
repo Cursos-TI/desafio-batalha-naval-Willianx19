@@ -1,21 +1,16 @@
 #include <stdio.h>
 
+#define linhas 10
+#define coluna 10
+
 int main() {
 
 //Variaveis, arrays e matriz:
 char letra[10] = {'A','B','C','D','E','F','G','I','J'};
 int i,j;
-int tabuleiro [10] [10];
+int tabuleiro [linhas] [coluna];
 
-//Formando a tabela:
-for(int i = 0; i < 10; i++)
-{
-    for(int j = 0; j < 10; j++)
-    {
-    tabuleiro [i][j]= 0;
-    }
-}
-
+//formando o titulo:
 printf("     ");
 printf("Batalha naval \n");
 
@@ -28,22 +23,24 @@ printf("%c ",letra [i]);
 printf(" \n");
 
 //Exibindo o número 3 na tabela(Coluna):
-tabuleiro [4] [6] = 3;
-tabuleiro [5] [6] = 3;
-tabuleiro [6] [6] = 3;
+
 
 //Exibindo o número 3 na tabela(Coluna):
-tabuleiro [2] [4] = 3;
-tabuleiro [2] [5] = 3;
-tabuleiro [2] [6] = 3;
+
 
 //Exibindo o tabuleiro com os númerso na lateral:
-for(int i = 0; i < 10; i++)
+for(int i = 0; i < linhas; i++)
 {
-printf("%d ",i +1);
-    for(int j = 0; j < 10; j++)
+printf("%d ",i);
+    for(int j = 0; j < coluna; j++)
     {
-printf(" %d",tabuleiro [i][j]);
+    if (tabuleiro [i] == tabuleiro [j])  //Colocando coluna      
+    {
+    printf(" 3");
+    } else {               
+    printf(" 0");                        //Formando a tabela:
+    }
+    
     }
     printf(" \n");
 }
